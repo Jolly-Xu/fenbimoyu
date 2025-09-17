@@ -6,5 +6,7 @@
 如果有问题，在这个连接进行提问：https://github.com/Jolly-Xu/fenbimoyu
 
 粉笔考公刷题插件，每个题目单独展示，登陆粉笔官网，然后打开控制台，查看请求，点击题目或者刷题。然后在请求中就会出现对应的cookie，复制cookie到设置里面即可。应该程序员都会吧！！！
-![图片1](./image.png)
-![图片2](./image-1.png)
+
+
+![图片1](./image/image.png)
+![图片2](./image/image-1.png)

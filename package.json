@@ -3,7 +3,7 @@
   "displayName": "fenbi-moyu",
   "publisher": "jollyxu",  
   "description": "粉笔考公、摸鱼插件，每道题目单独展示，页面优美",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "engines": {
     "vscode": "^1.95.0"
   },
