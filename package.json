@@ -1,0 +1,138 @@
+{
+  "name": "fenbi-moyu",
+  "displayName": "fenbi-moyu",
+  "publisher": "jollyxu",  
+  "description": "粉笔考公、摸鱼插件，每道题目单独展示，页面优美",
+  "version": "1.0.4",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "icon": "media/icons/logo.png",
+  "categories": [
+    "Other"
+  ],
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/Jolly-Xu/fenbimoyu.git"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fenbi-moyu.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "views": {
+      "fenbi-moyu": [
+        {
+          "id": "vscodeReactStarterView",
+          "type": "webview",
+          "name": "Menu"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fenbi-moyu",
+          "title": "Fenbi moyu",
+          "icon": "media/icons/hundred_points_color.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "fenbi-moyu",
+      "properties": {
+        "fbVscExtConfig.cookie": {
+          "order": 1,
+          "type": "string",
+          "default": "",
+          "markdownDescription": "cookie(必须填，填后刷新)",
+          "editPresentation": "multilineText"
+        },
+        "fbVscExtConfig.opacity": {
+          "order": 2,
+          "type": "number",
+          "default":1,
+          "minimum": 0,
+          "maximum": 1,
+          "markdownDescription": "透明度(0-1)，选填，请修改后重新进入",
+          "editPresentation": "singlelineText"
+        },
+        "fbVscExtConfig.fontSize": {
+          "order": 3,
+          "type": "number",
+          "default":null,
+          "markdownDescription": "字体大小(px)，选填，请修改后重新进入",
+          "editPresentation": "singlelineText"
+        },
+        "fbVscExtConfig.fontColor": {
+          "order": 4,
+          "type": "string",
+          "default":null,
+          "markdownDescription": "字体颜色(如#333333)，选填，请修改后重新进入",
+          "editPresentation": "singlelineText"
+        },
+        "fbVscExtConfig.showMode": {
+          "order": 5,
+          "type": "string",
+          "default": "NORMAL",
+          "markdownDescription": "显示模式，请修改后重新进入",
+          "enum": ["NORMAL", "JSON"]
+        },
+        "fbVscExtConfig.isShowMask": {
+          "order": 98,
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "是否显示遮罩层，请修改后重新进入"
+        },
+        "fbVscExtConfig.maskOpacity": {
+          "order": 99,
+          "type": "number",
+          "default":1,
+          "minimum": 0,
+          "maximum": 1,
+          "markdownDescription": "遮罩层透明度(0-1)，选填，请修改后重新进入【仅当isShowMask被置真时有效】",
+          "editPresentation": "singlelineText"
+        },
+        "fbVscExtConfig.maskFontSize": {
+          "order": 100,
+          "type": "number",
+          "default":null,
+          "markdownDescription": "遮罩层字体大小(px)，选填，请修改后重新进入【仅当isShowMask被置真时有效】",
+          "editPresentation": "singlelineText"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "install:all": "npm install && cd webview-ui && npm install",
+    "start:webview": "cd webview-ui && npm run start",
+    "build:webview": "cd webview-ui && npm run build",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "build:vsce": "npm run build:webview && vsce package"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.79.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  }
+}
